@@ -1,0 +1,20 @@
+Les relations Many to Many
+les relations many to many permettent de mettre en place des relations de cardinalité (n,m) entre deux tables (2 modèles). Par exemple, des magasins vendant des jeux, les magasins affichant plusieurs sortes de jeux et chaque sorte de jeux pouvant être trouvés dans plusieurs magasins. Dans ce cas, cette relation se caractèrise par la création d'une table intermédiaire recensant toutes les paires jeux, magasins possibles.
+
+dans Django, on va créer cette relation dans l'une des tables en ajoutant un champs models.ManyToManyFields(…) avec comme premier paramètre la seconde classe de la relation. Django va créer automatiquement une nouvelle tables stockant les paires de clés primaires symbolisant la relation (n,m)
+
+les autres paramètres de cette méthode permettent entre autre de définir un nouveau modèle pour la table de relation et de la fournir à Djnago plutot qu'il la crée seul. cela permet d'ajouter des informations supplèmentaires à la relation.
+
+Par exemple, le modéles stock peux contenir la clé primaire du magasin, la clé primaire du jeu et en plus la quantité et le numéro du rayon où les jeux sont stockés.
+
+class Stock(models.Model):
+jeu = models.ForeignKey(Jeu, on_delete=models.CASCADE)
+magasin = models.ForeignKey(Magasin, on_delete=models.CASCADE)
+quantité = models.integerfields()
+rayon = models.CharField(max_length=64)
+dans ce cas on peux ajouter à la table magasin le champs
+
+jeu = models.ManyToManyFields(Jeu, through='Stock')
+pour de plus amples informations vous pouvez vous référez à la documentation django
+
+Modifié le: lundi 30 mai 2022, 15:25
