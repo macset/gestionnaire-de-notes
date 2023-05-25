@@ -8,7 +8,7 @@ body {
     background-color: #2bc9f5;
     color: #fff;
     padding: 10px;
-    text-align: center; /* 居中对齐 */
+    text-align: center; /* +++mid */
     margin-bottom: 3%;
   }
   
@@ -24,22 +24,22 @@ body {
   }
   
   #navbar a {
-    font-size: 20px; /* 放大字体大小 */
+    font-size: 20px; /* zoom */
   }
   
   
   #main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* 在每行上分散对齐 */
+    justify-content: space-between; /* Alignement de la dispersion sur chaque ligne */
   }
   
   .box {
-    width: calc(50% - 5%); /* 每个div的宽度为当前页面的50%，减去5%的间距 */
-    margin-bottom: 5%; /* 上下留出10%的间距 */
+    width: calc(50% - 5%); /* 50% - 5% mid */
+    margin-bottom: 5%; /* Laissez 10 % d'espace au-dessus et au-dessous */
     padding: 20px;
     background-color: #f2f2f2;
     border: 1px solid #ccc;
-    box-sizing: border-box; /* 计算边框在盒模型中的总宽度 */
+    box-sizing: border-box; /* Calcule la largeur totale de la boîte englobante dans le modèle de boîte */
   }
   
