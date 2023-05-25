@@ -8,6 +8,8 @@ body {
     background-color: #2bc9f5;
     color: #fff;
     padding: 10px;
+    text-align: center; /* 居中对齐 */
+    margin-bottom: 3%;
   }
   
   #navbar ul {
@@ -21,16 +23,23 @@ body {
     margin-right: 10px;
   }
   
+  #navbar a {
+    font-size: 20px; /* 放大字体大小 */
+  }
+  
+  
   #main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between; /* 在每行上分散对齐 */
   }
   
   .box {
-    width: calc(50% - 10px); /* 每个div的宽度为50%，减去一些间距 */
-    margin: 5px;
+    width: calc(50% - 5%); /* 每个div的宽度为当前页面的50%，减去5%的间距 */
+    margin-bottom: 5%; /* 上下留出10%的间距 */
     padding: 20px;
     background-color: #f2f2f2;
     border: 1px solid #ccc;
+    box-sizing: border-box; /* 计算边框在盒模型中的总宽度 */
   }
   

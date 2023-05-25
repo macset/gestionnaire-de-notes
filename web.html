@@ -1,26 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>网页标题</title>
+  <title>Gestionnaire de notes</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="navbar">
     <ul>
-      <li><a href="#">导航项1</a></li>
-      <li><a href="#">导航项2</a></li>
-      <li><a href="#">导航项3</a></li>
-      <li><a href="#">导航项4</a></li>
+      <li><a href="#">accueillir</a></li>
+      <li><a href="#">étudiant</a></li>
+      <li><a href="#">enseignant</a></li>
+      <li><a href="#">note</a></li>
     </ul>
   </div>
   
   <div id="main">
-    <div class="box">内容1</div>
-    <div class="box">内容2</div>
-    <div class="box">内容3</div>
-    <div class="box">内容4</div>
-    <div class="box">内容5</div>
-    <div class="box">内容6</div>
+    <div class="box" id="students">
+      <h2>des étudiants</h2>
+      <!-- Formulaire d'information sur l'étudiant et affichage des données -->
+      <form action="save_student.php" method="post">
+        <!-- Champs de formulaire pour la saisie des informations sur les étudiants -->
+        <input type="text" name="student_id" placeholder="N°étudiant" required>
+        <input type="text" name="student_nom" placeholder="Nom" required>
+        <input type="text" name="student_prénom" placeholder="prénom" required>
+        <input type="text" name="student_group" placeholder="groupe" required>
+        <input type="text" name="student_photo" placeholder="photo" required>
+        <input type="text" name="student_email" placeholder="email" required>
+        <input type="submit" value="save_student">
+      </form>
+    </div>
+    
+    <div class="box" id="ue">
+      <h2>des Unités d'enseignement : UE</h2>
+      <!-- Formulaire d'information sur l'UE et affichage des données -->
+      <form action="save_ue.php" method="post">
+        <!-- Champs de formulaire pour la saisie des informations sur l'UE -->
+        <input type="text" name="ue_code" placeholder="Code" required>
+        <input type="text" name="ue_nom" placeholder="Nom" required>
+        <input type="text" name="ue_semestre" placeholder="Semestre" required>
+        <input type="text" name="ue_créditECTS" placeholder="Crédit ECTS" required>
+        <input type="submit" value="Enregistrer UE">
+      </form>
+    </div>
+    
+    <div class="box" id="resources">
+      <h2>des ressources associées à une UE</h2>
+      <!-- Formulaire d'information sur la ressource et affichage des données -->
+      <form action="save_resource.php" method="post">
+        <!-- Champs de formulaire pour la saisie des informations sur la ressource -->
+        <input type="text" name="resource_code" placeholder="Code de ressource" required>
+        <input type="text" name="resource_nom" placeholder="Nom" required>
+        <input type="text" name="resource_descriptif" placeholder="Descriptif" required>
+        <input type="text" name="resource_coefficient" placeholder="Coefficient" required>
+        <input type="submit" value="Enregistrer ressource">
+      </form>
+    </div>
+    
+    <div class="box" id="enseignants">
+      <h2>des enseignants</h2>
+      <!-- Formulaire d'information sur l'enseignant et affichage des données -->
+      <form action="save_teacher.php" method="post">
+        <!-- Champs de formulaire pour la saisie des informations sur l'enseignant -->
+        <input type="text" name="enseignant_id" placeholder="ID" required>
+        <input type="text" name="enseignant_nom" placeholder="Nom" required>
+        <input type="text" name="enseignant_prénom" placeholder="Prénom" required>
+        <input type="submit" value="Enregistrer enseignant">
+      </form>
+    </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
