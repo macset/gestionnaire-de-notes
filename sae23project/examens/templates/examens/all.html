@@ -1,0 +1,38 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des étudiants</title>
+</head>
+<body>
+    <h1>Liste des étudiants</h1>
+    <ul>
+        {% if not etudiants %}
+            <p>Aucun étudiant disponible...</p>
+        {% endif %}
+        
+        {% for etudiant in etudiants %}
+            <li>
+                
+                {% comment %}
+                    <input type="checkbox" name="livre" value="{{ livre.id }}">
+                {% endcomment %}
+                <a href="../../appsae/update/{{ etudiant.id }}">Modifier</a>
+                <a href="../../appsae/delete/{{ etudiant.id }}">Supprimer</a>
+                {{ etudiant.id }} - {{ etudiant.nom }}
+            </li>
+        {% endfor %}
+        <br>
+        <a href="../../appsae/ajout">Ajouter un livre</a>
+    </ul>
+    
+</body>
+</html>

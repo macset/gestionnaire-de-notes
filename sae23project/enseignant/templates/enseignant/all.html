@@ -1,0 +1,38 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des étudiants</title>
+</head>
+<body>
+    <h1>Liste des étudiants</h1>
+    <ul>
+        {% if not etudiants %}
+            <p>Aucun étudiant disponible...</p>
+        {% endif %}
+        
+        {% for etudiant in etudiants %}
+            <li>
+                
+                {% comment %}
+                    <input type="checkbox" name="livre" value="{{ livre.id }}">
+                {% endcomment %}
+                <a href="../../enseignant/update/{{ enseignant.id }}">Modifier</a>
+                <a href="../../enseignant/delete/{{ enseignant.id }}">Supprimer</a>
+                {{ enseignant.id }} - {{ enseignant.nom }}
+            </li>
+        {% endfor %}
+        <br>
+        <a href="../../enseignant/ajout">Ajouter un livre</a>
+    </ul>
+    
+</body>
+</html>
