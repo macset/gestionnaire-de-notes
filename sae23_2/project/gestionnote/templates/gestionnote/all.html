@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des étudiants</title>
+</head>
+<body>
+    <h1>Liste des étudiants</h1>
+    <ul>
+        {% if not examens %}
+            <p>Aucun étudiant disponible...</p>
+        {% endif %}
+        
+        {% for examens in examenss %}
+            <li>
+                
+                {% comment %}
+                    <input type="checkbox" name="livre" value="{{ livre.id }}">
+                {% endcomment %}
+                <a href="../../gestionnote/update/{{ examens.id }}">Modifier</a>
+                <a href="../../gestionnote/delete/{{ examens.id }}">Supprimer</a>
+                {{ examens.id }} - {{ examens.nom }}
+            </li>
+        {% endfor %}
+        <br>
+        <a href="../../gestionnote/ajout">Ajouter un livre</a>
+    </ul>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to the Home Page</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'gestionnote/styles.css' %}">
+</head>
+<body>
+    <h1>Bienvenue sur e-services</h1>
+  <div id="navbar">
+    <ul>
+      <li><a href="/gestionnote/enseignement/">Enseignant</a></li>
+      <li><a href="/gestionnote/etudiant/">Etudiant</a></li>
+      <li><a href="/gestionnote/ajout">Examens</a></li>
+      <li><a href="https://e-services.uha.fr/fr/index.html">E-services</a></li>
+    </ul>
+  </div>
+
+  <div id="content">
+    <button onclick="window.location.href='/gestionnote/gestionnote/'">Aller à la page des enseignants</button>
+  </div>
+</body>
+</html>
