@@ -1,7 +1,0 @@
-/* Importer la police Roboto depuis Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-/* Appliquer la police Roboto à tous les éléments textuels de la page */
-html, body, h1, h2, h3, h4, h5, h6, p, span, a, li, label, input, textarea, button, blockquote, th, td, caption {
-  font-family: 'Roboto', sans-serif;
-}
