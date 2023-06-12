@@ -5,7 +5,7 @@ update
 
 
 {% block content %}
-    <form method="post" action="/gestionnote/traitementupdate/{{id}}">
+    <form method="post" action="/gestionnote/traitementupdatenote/{{id}}">
     {% csrf_token %}
     {{ form.as_ul }}
     <input type="submit" value="envoyer les données" />

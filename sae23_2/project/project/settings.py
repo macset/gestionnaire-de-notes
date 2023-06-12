@@ -91,7 +91,7 @@ DATABASES = {
 #        'PORT': '3306',
 #        'USER': 'root',
 #        'PASSWORD': 'toto',
-        #faire le serveu
+#        faire le serveur :) 
 #    }
 #}
 

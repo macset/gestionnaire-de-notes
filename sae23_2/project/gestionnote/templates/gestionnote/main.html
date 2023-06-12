@@ -3,22 +3,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Welcome to the Home Page</title>
+  <title> {% block title %}
+    Gestionnaire de note
+    {% endblock %}
+  </title>
   <link rel="stylesheet" type="text/css" href="{% static 'gestionnote/styles.css' %}">
 </head>
 <body>
-    <h1>Bienvenue sur e-services</h1>
+    <h1>Bienvenue sur votre Gestionnaire de notes</h1>
+    
   <div id="navbar">
     <ul>
-      <li><a href="/gestionnote/enseignement/">Enseignant</a></li>
-      <li><a href="/gestionnote/etudiant/">Etudiant</a></li>
-      <li><a href="/gestionnote/ajout">Examens</a></li>
-      <li><a href="https://e-services.uha.fr/fr/index.html">E-services</a></li>
+      <li><a href="/gestionnote/">
+        <img src="{% static 'image/home.png' %}" alt="Home">
+      </a>
+      
+      <li><a href="/gestionnote/allenseignant/">Enseignant</a></li>
+      <li><a href="/gestionnote/alletudiant">Etudiant</a></li>
+      <li><a href="/gestionnote/all">Examens</a></li>
+      <li><a href="/gestionnote/allrunite">Ressources</a></li>
+      <li><a href="/gestionnote/allunite">Unitée d'enseignement</a></li>
+      <li><a href="/gestionnote/allnote">note</a></li>
     </ul>
   </div>
 
-  <div id="content">
-    <button onclick="window.location.href='/gestionnote/gestionnote/'">Aller à la page des enseignants</button>
-  </div>
+  {% block content %}
+  <a href="/gestionnote/allenseignant/">Enseignant</a>
+  <a href="/gestionnote/alletudiant">Etudiant</a>
+  <a href="/gestionnote/ajout">Examens</a>
+  <a href="/gestionnote/allrunite">Ressources</a>
+  <a href="/gestionnote/allunite">Unitée d'enseignement</a>
+  <a href="/gestionnote/allnote">note</a>
+
+
+  {% endblock %}
 </body>
 </html>

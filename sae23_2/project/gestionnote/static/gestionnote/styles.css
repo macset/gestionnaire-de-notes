@@ -43,3 +43,22 @@ body {
     box-sizing: border-box; /* Calcule la largeur totale de la boîte englobante dans le modèle de boîte */
   }
   
+
+  .header {
+    background-color: #f5f5f5;
+    padding: 10px;
+  }
+  
+  .student-info {
+    margin-top: 20px;
+  }
+  
+  .student-info h2 {
+    text-align: center;
+  }
+  
+  .student-info form {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  
