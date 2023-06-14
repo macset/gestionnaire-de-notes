@@ -433,6 +433,6 @@ def updatenote(request, id):
     return render(request, 'gestionnote/updatenote.html', {'form': form, 'id': id})
 
 def deletenote(request, id):
-    etudiant = get_object_or_404(models.Note, pk=id)
-    etudiant.delete()
+    note = get_object_or_404(models.Note, pk=id)
+    note.delete()
     return HttpResponseRedirect("/gestionnote/allnote/")
