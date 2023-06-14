@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<title>ajout d'un examen</title>
-</head>
-<body>
+{% extends 'gestionnote/main.html' %}
+{% block title %}
+ajout d'un examen
+{% endblock %}
 
+
+{% block content %}
 <p> vous avez ajouté l'examens suivant {{examens.id}} {{examens.nom}} </p>
 <meta http-equiv="refresh" content="2; url=/gestionnote/all" />
-</body>
-</html>
+
+{% endblock %}
+
+

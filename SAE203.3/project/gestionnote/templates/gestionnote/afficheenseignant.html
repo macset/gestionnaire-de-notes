@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<title>ajout d'un enseignant</title>
-</head>
-<body>
+{% extends 'gestionnote/main.html' %}
+{% block title %}
+ajout d'un enseignant
+{% endblock %}
 
+
+{% block content %}
 <p> vous avez ajouté l'enseignant suivant {{enseignant.id}} {{enseignant.nom}} </p>
-<meta http-equiv="refresh" content="2; url=/gestionnote/all" />
-</body>
-</html>
+<meta http-equiv="refresh" content="2; url=/gestionnote/allenseignant/" />
+
+{% endblock %}

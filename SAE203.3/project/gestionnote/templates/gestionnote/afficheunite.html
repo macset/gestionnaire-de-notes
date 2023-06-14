@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<title>ajout d'une unité d'enseignement</title>
-</head>
-<body>
+{% extends 'gestionnote/main.html' %}
+{% block title %}
+ajout d'une unité d'enseignement
+{% endblock %}
 
+
+{% block content %}
 <p> vous avez ajouté l'unité d'enseignement suivante {{unite.code}} {{unite.Nom}} </p>
 <meta http-equiv="refresh" content="2; url=/gestionnote/allunite" />
-</body>
-</html>
+
+{% endblock %}
