@@ -6,8 +6,9 @@ from django import forms
 class ExamensForm(ModelForm):
     class Meta:
         model = models.Examens
-        fields = ('titre', 'date', 'coefficient')
+        fields = ('id','titre', 'date', 'coefficient')
         labels = {
+            'id' :_('id'),
             'titre' : _('Titre'),
             'date' : _('date') ,
             'coefficient' : _('coefficient'),
@@ -17,8 +18,9 @@ class ExamensForm(ModelForm):
 class EtudiantForm(ModelForm):
     class Meta:
         model = models.Etudiant
-        fields = ('nom', 'prénom', 'groupe', 'photo', 'email')
+        fields = ('Netudiant','nom', 'prénom', 'groupe', 'photo', 'email')
         labels = {
+            'Netudiant' :_('Netudiant'),
             'nom': _('Nom'),
             'prénom': _('Prénom'),
             'groupe': _('Groupe'),
@@ -34,8 +36,9 @@ class LoginForm(forms.Form):
 class EnseignantForm(ModelForm):
     class Meta:
         model = models.Enseignant
-        fields = ('nom', 'prénom')
+        fields = ('id','nom', 'prénom')
         labels = {
+            'id' :_('id'),
             'nom' : _('nom'),
             'prénom' : _('prénom'),
         }       
@@ -45,9 +48,10 @@ class EnseignantForm(ModelForm):
 class RuniteForm(ModelForm):
     class Meta:
         model = models.Runite
-        fields = ['nom', 'descriptif', 'coefficient']
+        fields = ['code_ressource','Nom', 'descriptif', 'coefficient']
         labels = {
-            'nom': _('Nom'),
+            'code_ressource' :_('code ressource'),
+            'Nom': _('Nom'),
             'descriptif': _('Descriptif'),
             'coefficient': _('Coefficient'),
         }
@@ -57,8 +61,9 @@ class RuniteForm(ModelForm):
 class UniteForm(ModelForm):
     class Meta:
         model = models.Unite
-        fields = ['Nom', 'semestre', 'crédit_ECTS']
+        fields = ['code','Nom', 'semestre', 'crédit_ECTS']
         labels = {
+            'code' :_('code'),
             'Nom': _('Nom'),
             'semestre': _('semestre'),
             'crédit_ECTS': _('crédit ECTS'),

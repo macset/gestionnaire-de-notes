@@ -1,7 +1,7 @@
 {% extends 'gestionnote/main.html' %}
 
 {% block title %}
-Ajout Examens
+gestionnaire
 {% endblock %}
 
 {% block content %}
@@ -10,10 +10,10 @@ Ajout Examens
         <ul>
             {% for enseignant in enseignants %}
                 <li>
-                    {{enseignant.nom }} {{ enseignant.prénom }}
+                    {{ enseignant.id }} {{enseignant.nom }} {{ enseignant.prénom }}
                     <a href="../../gestionnote/updateenseignant/{{ enseignant.id }}" >Modifier</a>
                     <a href="../../gestionnote/deleteenseignant/{{enseignant.id }}" >Supprimer</a>
-                    {{ enseignant.id }} - 
+                      
                 </li>
             {% endfor %}
             <br>
@@ -26,10 +26,10 @@ Ajout Examens
         <ul>
             {% for etudiant in etudiants %}
                 <li>
-                    {{etudiant.nom }} {{ etudiant.prenom }}
+                    {{ etudiant.Netudiant }} {{etudiant.nom }} {{ etudiant.prénom }}
                     <a href="../../gestionnote/updateetudiant/{{ etudiant.id }}">Modifier</a>
                     <a href="../../gestionnote/deleteetudiant/{{ etudiant.id }}">Supprimer</a>
-                    {{ enseignant.id }} - 
+                      
                 </li>
             {% endfor %}
             <br>
@@ -41,10 +41,10 @@ Ajout Examens
         <ul>
             {% for examens in examenss  %}
                 <li>
-                    {{ examens.titre }}
+                    {{ examens.id }} {{ examens.titre }}
                     <a href="../../gestionnote/update/{{ examens.id }}">Modifier</a>
                     <a href="../../gestionnote/delete/{{ examens.id }}">Supprimer</a>
-                    {{ examens.id }} - 
+                     
                 </li>
             {% endfor %}
             <br>
@@ -58,7 +58,7 @@ Ajout Examens
         <ul>
             {% for runite in runites %}
                 <li>
-                    {{ runite.id }} - {{runite.Nom }}
+                    {{ runite.code_ressource }} - {{runite.Nom}}
                     <a href="../../gestionnote/updaterunite/{{ runite.id }}">Modifier</a>
                     <a href="../../gestionnote/deleterunite/{{runite.id }}">Supprimer</a>
                 </li>
@@ -86,15 +86,16 @@ Ajout Examens
         <ul>
             {% for note in notes %}
                 <li>
-                    {{note.nom }} {{ note.prenom }}
+                    {{ note.etudiant }} {{note.note }}
                     <a href="../../gestionnote/updatenote/{{ note.id }}">Modifier</a>
                     <a href="../../gestionnote/deletenote/{{note.id }}">Supprimer</a>
-                    {{ note.id }} - 
+                     
                 </li>
             {% endfor %}
             <br>
             <a href="../../gestionnote/ajoutnote" class="btn">Ajouter une note </a>
         </ul>
     </div>
+
 </div>
 {% endblock %}

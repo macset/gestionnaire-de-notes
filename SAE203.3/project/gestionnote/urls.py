@@ -60,11 +60,11 @@ urlpatterns = [
 
 
 
-  path('ajoutnote', views.ajoutnote, name='ajout'),  
-  path('traitementnote/', views.traitementnote , name='traitement'),
-  path('allnote/', views.all, name='all'),
-  path('readnote/<int:id>', views.readnote, name='read'),
+  path('ajoutnote', views.ajoutnote, name='ajoutnote'),  
+  path('traitementnote/', views.traitementnote , name='traitementnote'),
+  path('allnote/', views.all, name='allnote'),
+  path('readnote/<int:id>', views.readnote, name='readnote'),
   path('updatenote/<int:id>', views.updatenote, name='update',),
-  path('traitementupdatenote/<int:id>', views.traitementupdatenote, name='traitementupdate'),
-  path('deletenote/<int:id>', views.deletenote, name='delete'),
+  path('traitementupdatenote/<int:id>', views.traitementupdatenote, name='traitementupdatenote'),
+  path('deletenote/<int:id>', views.deletenote, name='deletenote'),
 ]

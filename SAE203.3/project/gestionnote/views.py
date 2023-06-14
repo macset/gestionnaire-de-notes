@@ -53,8 +53,7 @@ def traitement(request):
     
 def all(request):
     examenss = list(models.Examens.objects.all())
-    etudiants = list(models.Etudiant.objects.all())
-    return render(request, 'gestionnote/all.html', {'examenss': examenss,'etudiant': etudiants})
+    return render(request, 'gestionnote/all.html', {'examenss': examenss})
     
 
 
@@ -136,7 +135,7 @@ def traitementupdateenseignant(request, id):
         enseignant = lform.save(commit=False)
         enseignant.id = id
         enseignant.save()
-        return HttpResponseRedirect("/gestionnote/all/")
+        return HttpResponseRedirect("/gestionnote/allenseignant/")
     else:
         return render(request, 'gestionnote/update.html', {'form': lform, 'id': id})
         
@@ -204,7 +203,7 @@ def traitementupdateetudiant(request, id):
         etudiant = lform.save(commit=False)
         etudiant.id = id
         etudiant.save()
-        return HttpResponseRedirect("/gestionnote/all/")
+        return HttpResponseRedirect("/gestionnote/alletudiant/")
     else:
         return render(request, 'gestionnote/update.html', {'form': lform, 'id': id})
         
@@ -276,7 +275,7 @@ def traitementupdaterunite(request, id):
         runite = lform.save(commit=False)
         runite.id = id
         runite.save()
-        return HttpResponseRedirect("/gestionnote/all/")
+        return HttpResponseRedirect("/gestionnote/allrunite/")
     else:
         return render(request, 'gestionnote/updaterunite.html', {'form': lform, 'id': id})
         
@@ -346,7 +345,7 @@ def traitementupdateunite(request, id):
         unite = lform.save(commit=False)
         unite.id = id
         unite.save()
-        return HttpResponseRedirect("/gestionnote/all/")
+        return HttpResponseRedirect("/gestionnote/allunite/")
     else:
         return render(request, 'gestionnote/updateunite.html', {'form': lform, 'id': id})
         
@@ -400,7 +399,7 @@ def traitementnote(request):
     
 def allnote(request):
     notes = list(models.Note.objects.all())
-    return render(request, 'gestionnote/all.html', {'notes': notes})
+    return render(request, 'gestionnote/allnote.html', {'notes': notes})
 
 
 def readnote(request,id):
@@ -414,7 +413,7 @@ def traitementupdatenote(request, id):
         note = lform.save(commit=False)
         note.id = id
         note.save()
-        return HttpResponseRedirect("/gestionnote/all/")
+        return HttpResponseRedirect("/gestionnote/allnote/")
     else:
         return render(request, 'gestionnote/updatenote.html', {'form': lform, 'id': id})
         
@@ -436,4 +435,4 @@ def updatenote(request, id):
 def deletenote(request, id):
     etudiant = get_object_or_404(models.Note, pk=id)
     etudiant.delete()
-    return HttpResponseRedirect("/gestionnote/all/")
+    return HttpResponseRedirect("/gestionnote/allnote/")
