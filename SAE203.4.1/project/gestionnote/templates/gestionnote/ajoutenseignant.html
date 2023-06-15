@@ -1,0 +1,14 @@
+{% extends 'gestionnote/main.html' %}
+{% block title %}
+Ajout Enseignant
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <form method="post" action="/gestionnote/traitementenseignant/">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enregistrer">
+    </form>
+</div>
+{% endblock %}
