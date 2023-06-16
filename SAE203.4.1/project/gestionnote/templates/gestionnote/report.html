@@ -1,12 +1,11 @@
 <!-- report.html -->
 <h1>Transcription</h1>
-
+<meta charest="UTF-8">
 <!-- 表单代码 -->
 <form method="post" action="{% url 'generate_report' %}">
   {% csrf_token %}
-  <label for="student_id">学生ID：</label>
-  <input type="text" id="student_id" name="student_id">
-  <button type="submit">生成PDF</button>
+  <label for="student_id">ID：</label>
+  
 </form>
 
 <!-- 成绩列表 -->
