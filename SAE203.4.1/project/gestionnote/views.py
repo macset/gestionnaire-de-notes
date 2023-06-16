@@ -106,7 +106,7 @@ def ajoutenseignant(request):
         form = EnseignantForm(request)
         if form.is_valid():
             enseignant = form.save()
-            return render(request, 'gestionnote/affiche.html', {'enseignant': enseignant})
+            return render(request, 'gestionnote/afficheenseignant.html', {'enseignant': enseignant})
         else:
             return render(request, 'gestionnote/ajoutenseignant.html', {'form': form})
     else:
@@ -118,7 +118,7 @@ def traitementenseignant(request):
     lform = EnseignantForm(request.POST)
     if lform.is_valid():
         enseignant = lform.save()
-        return render(request, 'gestionnote/affiche.html', {'enseignant': enseignant})
+        return render(request, 'gestionnote/afficheenseignant.html', {'enseignant': enseignant})
     else:
         return render(request, 'gestionnote/ajoutenseignant.html', {'form': lform})
     
@@ -130,7 +130,7 @@ def allenseignant(request):
 
 def readenseignant(request,id):
     enseignant = models.Enseignant.objects.get(pk=id)
-    return render(request, 'gestionnote/affiche.html', {'enseignant': enseignant})
+    return render(request, 'gestionnote/afficheenseignant.html', {'enseignant': enseignant})
 
 def traitementupdateenseignant(request, id):
     lform = EnseignantForm(request.POST)
@@ -141,7 +141,7 @@ def traitementupdateenseignant(request, id):
         enseignant.save()
         return HttpResponseRedirect("/gestionnote/allenseignant/")
     else:
-        return render(request, 'gestionnote/update.html', {'form': lform, 'id': id})
+        return render(request, 'gestionnote/updateenseignant.html', {'form': lform, 'id': id})
         
     return HttpResponse("ok") 
 
@@ -156,12 +156,12 @@ def updateenseignant(request, id):
             form.save()
             return redirect('nom-de-la-page')
     """
-    return render(request, 'gestionnote/update.html', {'form': form, 'id': id})
+    return render(request, 'gestionnote/updateenseignant.html', {'form': form, 'id': id})
 
 def deleteenseignant(request, id):
     enseignant = get_object_or_404(models.Enseignant, pk=id)
     enseignant.delete()
-    return HttpResponseRedirect("/gestionnote/all/")
+    return HttpResponseRedirect("/gestionnote/allenseignant/")
 
 
 
