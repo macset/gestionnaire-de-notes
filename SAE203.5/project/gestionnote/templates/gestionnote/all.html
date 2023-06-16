@@ -1,0 +1,101 @@
+{% extends 'gestionnote/main.html' %}
+
+{% block title %}
+gestionnaire
+{% endblock %}
+
+{% block content %}
+<div class="content-all">
+    <div class="content-wrapper">
+        <ul>
+            {% for enseignant in enseignants %}
+                <li>
+                    {{ enseignant.id }} {{enseignant.nom }} {{ enseignant.prénom }}
+                    <a href="../../gestionnote/updateenseignant/{{ enseignant.id }}" >Modifier</a>
+                    <a href="../../gestionnote/deleteenseignant/{{enseignant.id }}" >Supprimer</a>
+                      
+                </li>
+            {% endfor %}
+            <br>
+            <a href="../../gestionnote/ajoutenseignant" class="btn">Ajouter un enseignant</a>
+        </ul>
+    </div>
+    
+    
+    <div class="content-wrapper">
+        <ul>
+            {% for etudiant in etudiants %}
+                <li>
+                    {{ etudiant.Netudiant }} {{etudiant.nom }} {{ etudiant.prénom }}
+                    <a href="../../gestionnote/updateetudiant/{{ etudiant.id }}">Modifier</a>
+                    <a href="../../gestionnote/deleteetudiant/{{ etudiant.id }}">Supprimer</a>
+                      
+                </li>
+            {% endfor %}
+            <br>
+            <a href="../../gestionnote/ajoutetudiant" class="btn">Ajouter un étudiant</a>
+        </ul>
+    </div>
+    
+    <div class="content-wrapper">
+        <ul>
+            {% for examens in examenss  %}
+                <li>
+                    {{ examens.id }} {{ examens.titre }}
+                    <a href="../../gestionnote/update/{{ examens.id }}">Modifier</a>
+                    <a href="../../gestionnote/delete/{{ examens.id }}">Supprimer</a>
+                     
+                </li>
+            {% endfor %}
+            <br>
+            <a href="../../gestionnote/ajout" class="btn">Ajouter un Examens</a>
+        </ul>
+    </div>
+    
+
+
+    <div class="content-wrapper">
+        <ul>
+            {% for runite in runites %}
+                <li>
+                    {{ runite.code_ressource }} - {{runite.Nom}}
+                    <a href="../../gestionnote/updaterunite/{{ runite.id }}">Modifier</a>
+                    <a href="../../gestionnote/deleterunite/{{runite.id }}">Supprimer</a>
+                </li>
+            {% endfor %}
+            <br>
+            <a href="../../gestionnote/ajoutrunite" class="btn">Ajouter une ressource d'enseignement</a>
+        </ul>
+    </div>
+
+    <div class="content-wrapper">
+        <ul>
+            {% for unite in unites %}
+                <li>
+                    {{ unite.id }} - {{unite.Nom }} {{ unite.semestre }}
+                    <a href="../../gestionnote/updateunite/{{ unite.id }}">Modifier</a>
+                    <a href="../../gestionnote/deleteunite/{{unite.id }}">Supprimer</a>
+                </li>
+            {% endfor %}
+            <br>
+            <a href="../../gestionnote/ajoutunite" class="btn">Ajouter une Unitée d'enseignement</a>
+        </ul>
+    </div>
+
+    <div class="content-wrapper">
+        <ul>
+            {% for note in notes %}
+                <li>
+                    {{ note.etudiant }} {{note.note }}
+                    <a href="../../gestionnote/updatenote/{{ note.id }}">Modifier</a>
+                    <a href="../../gestionnote/deletenote/{{note.id }}">Supprimer</a>
+                     
+                </li>
+            {% endfor %}
+            <br>
+            <a href="../../gestionnote/ajoutnote" class="btn">Ajouter une note </a>
+        </ul>
+    </div>
+
+</div>
+{% endblock %}

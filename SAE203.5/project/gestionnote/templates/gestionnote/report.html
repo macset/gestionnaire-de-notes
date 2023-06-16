@@ -1,0 +1,24 @@
+<!-- report.html -->
+<meta charset="UTF-8">
+<h1>Transcription</h1>
+
+{% with student_id=request.GET.student_id %}
+
+{% if student_name %}
+  <p>Nom de l'étudiant : {{ student_name }}</p>
+  <p>Liste des notes :</p>
+  <ul>
+    {% for score in scores %}
+      <li>Note: {{ score.note }}, Appréciation: {{ score.appréciation }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<form method="get" action="gestionnote/report">
+  <label for="student_id">Student ID:</label>
+
+
+</form>
+
+
+{% endwith %}
