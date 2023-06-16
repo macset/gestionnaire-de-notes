@@ -1,8 +1,17 @@
 <!-- report.html -->
-<meta charset="UTF-8">
 <h1>Transcription</h1>
-<p>Nom de l'étudiant : {{ student_name }}</p>
-<p>Liste des notes :</p>
+
+<!-- 表单代码 -->
+<form method="post" action="{% url 'generate_report' %}">
+  {% csrf_token %}
+  <label for="student_id">学生ID：</label>
+  <input type="text" id="student_id" name="student_id">
+  <button type="submit">生成PDF</button>
+</form>
+
+<!-- 成绩列表 -->
+<p>Nom de l'étudiant : {{ student_name }}</p>
+<p>Liste des notes :</p>
 <ul>
   {% for score in scores %}
     <li>{{ score }}</li>
