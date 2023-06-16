@@ -442,8 +442,6 @@ def deletenote(request, id):
     return HttpResponseRedirect("/gestionnote/allnote/")
 
 
-from django.http import HttpResponse
-from django.template.loader import get_template
 from gestionnote.models import Etudiant, Note
 
 def generate_report(request, student_id):
@@ -466,7 +464,7 @@ def generate_report(request, student_id):
         response = HttpResponse(content_type='application/pdf')
         response['Content-Disposition'] = 'attachment; filename="transcription.pdf"'
         response.write(pdf_file)
-        return response
+        return response 
 
     except Etudiant.DoesNotExist:
         return HttpResponse('Student does not exist')
@@ -474,10 +472,10 @@ def generate_report(request, student_id):
 def generate_pdf(html_content):
     options = {
         'page-size': 'A4',
-        'margin-top': '0mm',
-        'margin-right': '0mm',
-        'margin-bottom': '0mm',
-        'margin-left': '0mm',
+        'margin-top': '10mm',
+        'margin-right': '10mm',
+        'margin-bottom': '10mm',
+        'margin-left': '10mm',
     }
     pdf_file = pdfkit.from_string(html_content, False, options=options)
     return pdf_file

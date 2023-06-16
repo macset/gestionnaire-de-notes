@@ -20,7 +20,7 @@ class EtudiantForm(ModelForm):
         model = models.Etudiant
         fields = ('Netudiant','nom', 'prénom', 'groupe', 'photo', 'email')
         labels = {
-            'Netudiant' :_('Netudiant'),
+            'Netudiant' :_('Etudiant'),
             'nom': _('Nom'),
             'prénom': _('Prénom'),
             'groupe': _('Groupe'),
